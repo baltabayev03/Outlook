@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary -->
+  <title>Курсы юридической практики — Qazna Consulting</title>
+  <meta name="description" content="Образовательные курсы Qazna Consulting: банкротство и ВПС, частная юридическая практика. Обучение на реальных делах, рассрочка 0%. Набор открыт." />
+  <link rel="canonical" href="./" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0A5C41" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Qazna Consulting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Курсы юридической практики — Qazna Consulting" />
+  <meta property="og:description" content="Банкротство и ВПС, частная юридическая практика. Обучение на реальных делах от практикующих юристов. Рассрочка 0%." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────── Tokens ─────────────────────────── */
+    :root {
+      --bg:      #071410;
+      --bg-2:    #0A1C15;
+      --shell:   rgba(255,255,255,0.045);
+      --line:    rgba(255,255,255,0.08);
+      --line-2:  rgba(255,255,255,0.14);
+      --card:    #0E241C;
+      --card-2:  #0B1E17;
+      --accent:  #1EA97A;
+      --accent-2:#5BDCA9;
+      --green:   #25D366;
+      --text:    #F2F5FB;
+      --muted:   rgba(228,244,238,0.58);
+      --faint:   rgba(228,244,238,0.34);
+      --ease:    cubic-bezier(0.32, 0.72, 0, 1);
+      --font-d:  'Geologica', system-ui, sans-serif;
+      --font-b:  'Manrope', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: rgba(30,169,122,0.35); color: #fff; }
+    img, svg { display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    .container { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
+
+    /* ─────────────── Ambient layers (fixed, GPU-safe) ───────────── */
+    .noise {
+      position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    }
+    .glow { position: fixed; z-index: -1; pointer-events: none; border-radius: 50%; filter: blur(90px); }
+    .glow-a { width: 56vw; height: 56vw; top: -18vw; right: -14vw; background: radial-gradient(circle, rgba(30,169,122,0.13) 0%, transparent 65%); }
+    .glow-b { width: 48vw; height: 48vw; bottom: -16vw; left: -12vw; background: radial-gradient(circle, rgba(18,110,88,0.14) 0%, transparent 68%); }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .skip-link:focus {
+      position: fixed; top: 16px; left: 16px; z-index: 200; width: auto; height: auto; clip: auto;
+      background: var(--card); color: var(--accent-2); padding: 10px 18px; border-radius: 12px; font-weight: 700;
+    }
+
+    /* ─────────────────────── Scroll reveals ─────────────────────── */
+    .rv { opacity: 0; transform: translateY(30px); filter: blur(8px); transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease); transition-delay: var(--d, 0ms); }
+    .rv.in { opacity: 1; transform: none; filter: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; filter: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ─────────────────────────── Eyebrows ───────────────────────── */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      background: var(--shell); border: 1px solid var(--line);
+      font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(30,169,122,0.5); animation: pulse 2.4s infinite; }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(30,169,122,0.45); }
+      70%  { box-shadow: 0 0 0 9px rgba(30,169,122,0); }
+      100% { box-shadow: 0 0 0 0 rgba(30,169,122,0); }
+    }
+
+    /* ───────────────────────── Buttons ──────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 8px 8px 8px 26px; border-radius: 999px;
+      font-weight: 800; font-size: 14px; letter-spacing: -0.01em;
+      transition: transform 0.5s var(--ease), box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    .btn:hover  { transform: translateY(-2px); }
+    .btn:active { transform: scale(0.98); }
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%);
+      color: #04150E;
+      box-shadow: 0 6px 30px rgba(30,169,122,0.32);
+    }
+    .btn-accent:hover { box-shadow: 0 12px 40px rgba(30,169,122,0.44); }
+    .btn-ghost {
+      background: var(--shell); color: var(--text);
+      border: 1px solid var(--line-2);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+    .btn .orb {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.5s var(--ease);
+    }
+    .btn-accent .orb  { background: rgba(0,0,0,0.16); }
+    .btn-ghost .orb { background: var(--accent); color: #04150E; }
+    .btn:hover .orb { transform: translateX(3px) scale(1.06); }
+
+    /* ─────────────────────────── Nav ────────────────────────────── */
+    .nav-wrap { position: fixed; top: 18px; left: 0; right: 0; z-index: 90; display: flex; justify-content: center; padding-inline: 20px; }
+    .nav {
+      display: flex; align-items: center; gap: 28px;
+      width: max-content; max-width: 100%;
+      padding: 10px 12px 10px 22px; border-radius: 999px;
+      background: rgba(7,20,16,0.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+    .nav.scrolled { background: rgba(5,14,11,0.92); border-color: var(--line-2); }
+    .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand b { font-family: var(--font-d); font-weight: 900; font-size: 16px; letter-spacing: -0.02em; }
+    .brand span { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-2); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav .btn { padding: 6px 6px 6px 20px; font-size: 13px; }
+    .nav .btn .orb { width: 32px; height: 32px; }
+    @media (max-width: 860px) { .nav-links { display: none; } }
+
+    /* ─────────────────────────── Hero ───────────────────────────── */
+    .hero { padding: clamp(140px, 18vh, 190px) 0 clamp(60px, 8vw, 96px); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
+    .hero h1 {
+      font-family: var(--font-d); font-weight: 900;
+      font-size: clamp(38px, 6.4vw, 78px);
+      line-height: 1.02; letter-spacing: -0.04em;
+      margin: 26px 0 24px; text-wrap: balance;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent-2); }
+    .hero-sub { font-size: clamp(15px, 1.6vw, 18px); color: var(--muted); max-width: 52ch; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+    .hero-note { margin-top: 22px; font-size: 12.5px; color: var(--faint); display: flex; align-items: center; gap: 8px; }
+
+    /* Hero visual — Z-cascade cards */
+    .hero-stage { position: relative; min-height: 480px; }
+    .float-card {
+      position: absolute; border-radius: 26px;
+      background: var(--shell); border: 1px solid var(--line);
+      padding: 8px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+    }
+    .float-card .core {
+      border-radius: 20px; background: var(--card);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+      padding: 24px;
+    }
+    .fc-main { top: 50%; right: 6%; transform: translateY(-54%) rotate(-2.5deg); width: min(360px, 86%); z-index: 2; }
+    .fc-back { top: 6%; right: 30%; transform: rotate(4deg); width: min(280px, 62%); z-index: 1; opacity: 0.75; }
+    .chip-float {
+      position: absolute; bottom: 7%; left: 4%; z-index: 3;
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 18px; border-radius: 999px;
+      background: rgba(8,20,16,0.92); border: 1px solid var(--line-2);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      font-size: 13px; font-weight: 700;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .chip-float svg { color: var(--accent-2); }
+    @media (max-width: 767px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stage { min-height: 0; margin-top: 8px; }
+      .float-card { position: relative; top: auto; right: auto; bottom: auto; transform: none; width: 100%; }
+      .fc-main { margin-left: auto; max-width: 420px; }
+      .fc-back { display: none; }
+      .chip-float { position: absolute; bottom: -18px; left: 6%; }
+      .hero-stage { padding-bottom: 30px; }
+    }
+
+    /* course teaser card content */
+    .ct-tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 12px; }
+    .ct-title { font-family: var(--font-d); font-weight: 800; font-size: 19px; letter-spacing: -0.02em; line-height: 1.25; }
+    .ct-meta { display: flex; gap: 16px; margin-top: 14px; font-size: 12px; color: var(--muted); }
+    .ct-meta span { display: flex; align-items: center; gap: 6px; }
+    .ct-progress { margin-top: 18px; }
+    .ct-progress .lbl { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: var(--faint); margin-bottom: 8px; }
+    .ct-bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.07); overflow: hidden; }
+    .ct-bar i { display: block; height: 100%; width: 58%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+    .ct-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
+    .avatars { display: flex; }
+    .avatars i {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-style: normal; font-size: 10.5px; font-weight: 800; color: #fff;
+      border: 2px solid var(--card); margin-left: -8px;
+    }
+    .avatars i:first-child { margin-left: 0; }
+    .ct-price { font-family: var(--font-d); font-weight: 900; font-size: 21px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .ct-price small { display: block; font-family: var(--font-b); font-weight: 600; font-size: 10.5px; color: var(--faint); letter-spacing: 0; }
+    .back-core { display: flex; align-items: center; gap: 12px; padding: 16px !important; }
+    .back-core .ic { width: 40px; height: 40px; border-radius: 12px; background: rgba(30,169,122,0.14); border: 1px solid rgba(30,169,122,0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-2); flex-shrink: 0; }
+    .back-core b { font-size: 13px; letter-spacing: -0.01em; display: block; }
+    .back-core small { font-size: 11px; color: var(--faint); }
+
+    /* ──────────────────────── Marquee ───────────────────────────── */
+    .marquee {
+      border-block: 1px solid var(--line);
+      padding: 18px 0; overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .mq-track { display: flex; width: max-content; gap: 44px; animation: mq 34s linear infinite; will-change: transform; }
+    .mq-track:hover { animation-play-state: paused; }
+    @keyframes mq { to { transform: translateX(-50%); } }
+    .mq-item { display: flex; align-items: center; gap: 44px; white-space: nowrap; font-family: var(--font-d); font-weight: 800; font-size: 15px; letter-spacing: 0.02em; color: var(--faint); }
+    .mq-item::after { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.7; }
+
+    /* ─────────────────────── Sections base ──────────────────────── */
+    section { position: relative; }
+    .sec-pad { padding-block: clamp(80px, 10vw, 140px); }
+    .sec-head { max-width: 720px; margin-bottom: clamp(44px, 5vw, 72px); }
+    .sec-head h2 {
+      font-family: var(--font-d); font-weight: 900;
+      font-size: clamp(30px, 4.4vw, 54px);
+      line-height: 1.05; letter-spacing: -0.03em;
+      margin-top: 22px; text-wrap: balance;
+    }
+    .sec-head p { margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 58ch; }
+
+    /* ──────────────────────── Stats band ────────────────────────── */
+    .stats { border-bottom: 1px solid var(--line); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stat { padding: 8px 0; }
+    .stat b { font-family: var(--font-d); font-weight: 900; font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; display: block; }
+    .stat b em { font-style: normal; color: var(--accent-2); }
+    .stat span { font-size: 12.5px; color: var(--faint); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    @media (max-width: 767px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; } }
+
+    /* ─────────────────── Programs (zig-zag) ─────────────────────── */
+    .program { margin-bottom: clamp(40px, 5vw, 64px); }
+    .program:last-child { margin-bottom: 0; }
+    .p-shell {
+      border-radius: 32px;
+      background: var(--shell); border: 1px solid var(--line);
+      padding: 10px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    }
+    .p-core {
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+    .p-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; }
+    .program.alt .p-grid { grid-template-columns: 0.95fr 1.05fr; }
+    .program.alt .p-info { order: 2; }
+    .program.alt .p-mods { order: 1; }
+    .p-info { padding: clamp(28px, 3.4vw, 48px); display: flex; flex-direction: column; }
+    .p-badge { align-self: flex-start; font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; background: rgba(30,169,122,0.13); border: 1px solid rgba(30,169,122,0.3); color: var(--accent-2); }
+    .p-info h3 { font-family: var(--font-d); font-weight: 900; font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -0.03em; line-height: 1.12; margin: 20px 0 14px; text-wrap: balance; }
+    .p-info > p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .p-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .p-chip { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; color: var(--muted); padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.045); border: 1px solid var(--line); }
+    .p-chip svg { color: var(--accent-2); flex-shrink: 0; }
+    .p-buy { margin-top: auto; padding-top: 30px; }
+    .p-price-row { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
+    .p-price { font-family: var(--font-d); font-weight: 900; font-size: clamp(30px, 3vw, 40px); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; }
+    .p-instal { font-size: 13px; font-weight: 700; color: var(--accent-2); padding-bottom: 3px; }
+    .p-instal small { display: block; font-size: 11px; font-weight: 600; color: var(--faint); }
+    .p-mods { padding: clamp(28px, 3.4vw, 44px); background: var(--card-2); border-right: 1px solid var(--line); }
+    .program.alt .p-mods { border-right: none; border-left: 1px solid var(--line); }
+    .p-mods-t { font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin-bottom: 20px; }
+    .mod { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px dashed rgba(255,255,255,0.09); }
+    .mod:last-child { border-bottom: none; }
+    .mod-n { font-family: var(--font-d); font-weight: 800; font-size: 13px; color: var(--accent-2); font-variant-numeric: tabular-nums; padding-top: 1px; flex-shrink: 0; }
+    .mod b { display: block; font-size: 14px; letter-spacing: -0.01em; }
+    .mod span { font-size: 12.5px; color: var(--faint); line-height: 1.55; display: block; margin-top: 2px; }
+    @media (max-width: 900px) {
+      .p-grid, .program.alt .p-grid { grid-template-columns: 1fr; }
+      .program.alt .p-info { order: 1; }
+      .program.alt .p-mods { order: 2; }
+      .p-mods { border-right: none !important; border-left: none !important; border-top: 1px solid var(--line) !important; }
+    }
+
+    /* ───────────────────── Format (bento) ───────────────────────── */
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .b-cell { grid-column: span 12; }
+    .b-shell { border-radius: 26px; background: var(--shell); border: 1px solid var(--line); padding: 8px; height: 100%; }
+    .b-core {
+      border-radius: 19px; background: var(--card);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      padding: 28px; height: 100%;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: transform 0.6s var(--ease), background 0.4s ease;
+    }
+    .b-cell:hover .b-core { transform: translateY(-4px); background: #123026; }
+    .b-ic { width: 46px; height: 46px; border-radius: 14px; background: rgba(30,169,122,0.13); border: 1px solid rgba(30,169,122,0.28); display: flex; align-items: center; justify-content: center; color: var(--accent-2); }
+    .b-core b { font-family: var(--font-d); font-size: 17px; font-weight: 800; letter-spacing: -0.02em; }
+    .b-core p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+    @media (min-width: 768px) {
+      .b-7 { grid-column: span 7; } .b-5 { grid-column: span 5; }
+      .b-4 { grid-column: span 4; } .b-8 { grid-column: span 8; }
+    }
+
+    /* ──────────────────────── Steps ─────────────────────────────── */
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 26px 20px; border-radius: 22px; background: var(--shell); border: 1px solid var(--line); }
+    .step-n { font-family: var(--font-d); font-weight: 900; font-size: 30px; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px rgba(82,214,168,0.55); font-variant-numeric: tabular-nums; }
+    .step b { display: block; font-size: 14.5px; margin: 14px 0 6px; letter-spacing: -0.01em; }
+    .step span { font-size: 12.5px; color: var(--faint); line-height: 1.6; display: block; }
+    @media (max-width: 1023px) { .steps { grid-template-columns: repeat(2, 1fr); } .step:last-child { grid-column: 1 / -1; } }
+    @media (max-width: 560px)  { .steps { grid-template-columns: 1fr; } }
+
+    /* ─────────────────────── Payment ────────────────────────────── */
+    .pay-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px, 5vw, 72px); align-items: start; }
+    .pay-list { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
+    .pay-item { display: flex; gap: 16px; padding: 18px 20px; border-radius: 18px; background: var(--shell); border: 1px solid var(--line); }
+    .pay-item .ic { width: 38px; height: 38px; border-radius: 11px; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25); color: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pay-item b { display: block; font-size: 14.5px; letter-spacing: -0.01em; }
+    .pay-item span { font-size: 13px; color: var(--faint); }
+    .price-cards { display: grid; gap: 16px; }
+    .pc-shell { border-radius: 26px; background: var(--shell); border: 1px solid var(--line); padding: 8px; }
+    .pc-core { border-radius: 19px; background: var(--card); box-shadow: inset 0 1px 0 rgba(255,255,255,0.07); padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .pc-name { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .pc-name b { display: block; font-family: var(--font-d); font-weight: 800; font-size: 17px; color: var(--text); letter-spacing: -0.02em; margin-top: 3px; }
+    .pc-sum { text-align: right; flex-shrink: 0; }
+    .pc-sum b { font-family: var(--font-d); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .pc-sum small { display: block; font-size: 12px; font-weight: 700; color: var(--accent-2); margin-top: 4px; }
+    .pc-hot { position: relative; }
+    .pc-hot::after {
+      content: 'Хит набора'; position: absolute; top: -9px; left: 26px;
+      font-size: 9.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04150E;
+      padding: 4px 12px; border-radius: 999px;
+    }
+    @media (max-width: 860px) { .pay-grid { grid-template-columns: 1fr; } }
+
+    /* ──────────────────────── FAQ ───────────────────────────────── */
+    .faq-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(36px, 5vw, 72px); align-items: start; }
+    .faq-side { position: sticky; top: 110px; }
+    .faq-side .btn { margin-top: 30px; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { border-radius: 20px; background: var(--shell); border: 1px solid var(--line); overflow: hidden; transition: border-color 0.3s ease; }
+    .faq-item.open { border-color: var(--line-2); }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; text-align: left; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+    .faq-q svg { flex-shrink: 0; color: var(--accent-2); transition: transform 0.5s var(--ease); }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.55s var(--ease); }
+    .faq-item.open .faq-a { grid-template-rows: 1fr; }
+    .faq-a-in { overflow: hidden; }
+    .faq-a-in p { padding: 0 24px 22px; font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 62ch; }
+    @media (max-width: 860px) {
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-side { position: static; }
+    }
+
+    /* ─────────────────────── Final CTA ──────────────────────────── */
+    .final {
+      margin: 0 20px clamp(60px, 7vw, 100px);
+      border-radius: 36px; overflow: hidden; position: relative;
+      background: linear-gradient(160deg, #0E2A20 0%, #081B14 100%);
+      border: 1px solid var(--line-2);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.45);
+      text-align: center;
+    }
+    .final::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 55% 70% at 50% 0%, rgba(30,169,122,0.14) 0%, transparent 65%);
+    }
+    .final-in { position: relative; padding: clamp(64px, 8vw, 110px) 24px; max-width: 780px; margin-inline: auto; }
+    .final h2 { font-family: var(--font-d); font-weight: 900; font-size: clamp(30px, 4.6vw, 56px); letter-spacing: -0.035em; line-height: 1.05; text-wrap: balance; }
+    .final p { color: var(--muted); font-size: 16px; margin: 20px auto 36px; max-width: 46ch; line-height: 1.75; }
+    .final .btn { font-size: 15px; padding: 10px 10px 10px 30px; }
+    .final .btn .orb { width: 42px; height: 42px; }
+
+    /* ──────────────────────── Footer ────────────────────────────── */
+    footer { border-top: 1px solid var(--line); padding: 44px 0 40px; }
+    .foot { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .foot-desc { font-size: 13px; color: var(--faint); max-width: 300px; line-height: 1.7; margin-top: 12px; }
+    .foot-col { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; }
+    .foot-col b { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+    .foot-col a { transition: color 0.3s ease; }
+    .foot-col a:hover { color: var(--text); }
+    .foot-bottom { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--faint); }
+    .foot-bottom button { font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s ease; }
+    .foot-bottom button:hover { color: var(--text); }
+
+    /* ─────────────────────── Modal ──────────────────────────────── */
+    .modal { position: fixed; inset: 0; z-index: 150; display: flex; align-items: center; justify-content: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity 0.4s var(--ease), visibility 0.4s; }
+    .modal.open { visibility: visible; opacity: 1; }
+    .modal-bg { position: absolute; inset: 0; background: rgba(4,8,18,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .modal-card {
+      position: relative; width: min(640px, 100%); max-height: 82vh; overflow-y: auto;
+      border-radius: 26px; background: var(--bg-2); border: 1px solid var(--line-2);
+      padding: clamp(28px, 4vw, 44px);
+      transform: translateY(24px) scale(0.98); transition: transform 0.5s var(--ease);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    }
+    .modal.open .modal-card { transform: none; }
+    .modal-card h3 { font-family: var(--font-d); font-weight: 900; font-size: 24px; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .modal-card h4 { font-size: 14px; font-weight: 800; margin: 22px 0 8px; color: var(--accent-2); }
+    .modal-card p, .modal-card li { font-size: 13.5px; color: var(--muted); line-height: 1.75; }
+    .modal-card ul { padding-left: 18px; margin-top: 6px; }
+    .modal-x { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 50%; background: var(--shell); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); transition: color 0.3s ease, transform 0.4s var(--ease); }
+    .modal-x:hover { color: var(--text); transform: rotate(90deg); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link sr-only">Перейти к содержимому</a>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <div class="nav-wrap">
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <div class="brand"><img src="logo.svg" alt="Логотип Qazna Consulting" style="height:26px;width:auto;border-radius:7px;" /><b>Qazna Consulting</b><span>· Образование</span></div>
+      <div class="nav-links">
+        <a href="#programs">Программы</a>
+        <a href="#format">Формат</a>
+        <a href="#payment">Оплата</a>
+        <a href="#faq">Вопросы</a>
+      </div>
+      <a href="#" class="btn btn-accent" data-wa="Здравствуйте! Хочу записаться на курс.">
+        Записаться
+        <span class="orb">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow rv"><i class="dot"></i>Образовательное направление Qazna Consulting</span>
+          <h1 class="rv" style="--d:80ms">Юридические курсы, построенные <em>на реальных делах</em></h1>
+          <p class="hero-sub rv" style="--d:160ms">
+            Два практических направления — банкротство и ВПС, а также частная юридическая
+            практика. Учитесь у практикующих юристов: разбираем живые кейсы, документы
+            и судебные стратегии, а не сухую теорию.
+          </p>
+          <div class="hero-actions rv" style="--d:240ms">
+            <a href="#" class="btn btn-accent" data-wa="Здравствуйте! Хочу записаться на курс. Подскажите детали.">
+              Записаться на курс
+              <span class="orb">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+            <a href="#programs" class="btn btn-ghost">
+              Смотреть программы
+              <span class="orb">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+              </span>
+            </a>
+          </div>
+          <p class="hero-note rv" style="--d:320ms">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Набор в новую группу открыт · количество мест ограничено
+          </p>
+        </div>
+
+        <!-- Visual: Z-cascade cards -->
+        <div class="hero-stage rv" style="--d:260ms" aria-hidden="true">
+          <div class="float-card fc-back">
+            <div class="core back-core">
+              <div class="ic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div><b>Частная практика</b><small>второй поток программы</small></div>
+            </div>
+          </div>
+
+          <div class="float-card fc-main">
+            <div class="core">
+              <span class="ct-tag">Флагманская программа</span>
+              <p class="ct-title">Банкротство и ВПС — юрист-практик</p>
+              <div class="ct-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  3 месяца
+                </span>
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 00-3-3.87"/></svg>
+                  малые группы
+                </span>
+              </div>
+              <div class="ct-progress">
+                <div class="lbl"><span>Программа</span><span>модуль 3 из 5</span></div>
+                <div class="ct-bar"><i></i></div>
+              </div>
+              <div class="ct-foot">
+                <div class="avatars">
+                  <i style="background:#1C4A38">А</i>
+                  <i style="background:#2E6B4F">М</i>
+                  <i style="background:#173B2C">Т</i>
+                  <i style="background:#3E8A66">+</i>
+                </div>
+                <div class="ct-price">500 000 ₸<small>рассрочка от 130 000 ₸/мес</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chip-float">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 12.5H11L10 22l8.5-10.5H12L13 2z"/></svg>
+            Рассрочка 0% — без банков и переплат
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ MARQUEE ═══════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track" id="mq-track">
+        <div class="mq-item">Банкротство физических лиц</div>
+        <div class="mq-item">Процедура ВПС</div>
+        <div class="mq-item">Закон РК № 178-VII</div>
+        <div class="mq-item">Договорная работа</div>
+        <div class="mq-item">Судебные споры</div>
+        <div class="mq-item">Переговоры с банками</div>
+        <div class="mq-item">Частная практика</div>
+        <div class="mq-item">Работа с клиентом</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ STATS ═══════════════ -->
+    <section class="sec-pad stats">
+      <div class="container stats-grid">
+        <div class="stat rv"><b>9<em>+</em></b><span>лет практики команды</span></div>
+        <div class="stat rv" style="--d:80ms"><b>1000<em>+</em></b><span>закрытых дел</span></div>
+        <div class="stat rv" style="--d:160ms"><b>2</b><span>программы обучения</span></div>
+        <div class="stat rv" style="--d:240ms"><b>0<em>%</em></b><span>рассрочка без переплат</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROGRAMS ═══════════════ -->
+    <section class="sec-pad" id="programs">
+      <div class="container">
+        <div class="sec-head rv">
+          <span class="eyebrow">Программы обучения</span>
+          <h2>Выберите своё направление</h2>
+          <p>Каждая программа — это связный путь от теории к самостоятельной работе с клиентами. Занятия ведут практикующие юристы, все задания проверяются вручную.</p>
+        </div>
+
+        <!-- Program 1 -->
+        <article class="program">
+          <div class="p-shell rv">
+            <div class="p-core">
+              <div class="p-grid">
+                <div class="p-info">
+                  <span class="p-badge">Курс 01 · Специализация</span>
+                  <h3>Банкротство и ВПС — юрист-практик</h3>
+                  <p>Узкая востребованная ниша: полное восстановление платёжеспособности и банкротство физических лиц по Закону РК № 178-VII. К концу курса вы самостоятельно ведёте клиента — от первой консультации до завершения процедуры.</p>
+                  <div class="p-chips">
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>3 месяца</span>
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M8 21h8M12 20v-4"/></svg>онлайн + практика</span>
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>5 модулей</span>
+                  </div>
+                  <div class="p-buy">
+                    <div class="p-price-row">
+                      <span class="p-price">500 000 ₸</span>
+                      <span class="p-instal">или рассрочка<small>от 130 000 ₸/мес</small></span>
+                    </div>
+                    <a href="#" class="btn btn-accent" data-wa="Здравствуйте! Интересует курс «Банкротство и ВПС — юрист-практик» (500 000 ₸). Хочу узнать подробности.">
+                      Занять место
+                      <span class="orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="p-mods">
+                  <p class="p-mods-t">Программа курса</p>
+                  <div class="mod"><span class="mod-n">01</span><div><b>Правовая база банкротства</b><span>Закон № 178-VII: внесудебное и судебное банкротство, круг субъектов, последние изменения.</span></div></div>
+                  <div class="mod"><span class="mod-n">02</span><div><b>Процедура ВПС под ключ</b><span>Заявление, план восстановления, согласование с кредиторами, сопровождение до финала.</span></div></div>
+                  <div class="mod"><span class="mod-n">03</span><div><b>Переговоры с банками</b><span>Структура долга, реструктуризация, работа с коллекторами и претензиями.</span></div></div>
+                  <div class="mod"><span class="mod-n">04</span><div><b>Судебная практика</b><span>Разбор реальных дел: типовые отказы, возражения кредиторов, стратегия защиты.</span></div></div>
+                  <div class="mod"><span class="mod-n">05</span><div><b>Работа с клиентом</b><span>Консультация, сбор документов, коммуникация, этика и конфиденциальность.</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Program 2 -->
+        <article class="program alt">
+          <div class="p-shell rv">
+            <div class="p-core">
+              <div class="p-grid">
+                <div class="p-info">
+                  <span class="p-badge">Курс 02 · Полный цикл</span>
+                  <h3>Частная юридическая практика</h3>
+                  <p>Универсальная программа для тех, кто хочет работать на себя: от выбора ниши и упаковки услуг до первых клиентов и стабильного дохода. Финальный блок — стажировка на действующих делах под наставником.</p>
+                  <div class="p-chips">
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 месяца</span>
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M8 21h8M12 20v-4"/></svg>онлайн + стажировка</span>
+                    <span class="p-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>6 модулей</span>
+                  </div>
+                  <div class="p-buy">
+                    <div class="p-price-row">
+                      <span class="p-price">650 000 ₸</span>
+                      <span class="p-instal">или рассрочка<small>от 160 000 ₸/мес</small></span>
+                    </div>
+                    <a href="#" class="btn btn-accent" data-wa="Здравствуйте! Интересует курс «Частная юридическая практика» (650 000 ₸). Хочу узнать подробности.">
+                      Занять место
+                      <span class="orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="p-mods">
+                  <p class="p-mods-t">Программа курса</p>
+                  <div class="mod"><span class="mod-n">01</span><div><b>Ниша и позиционирование</b><span>Выбор специализации, анализ спроса, упаковка услуг и ценностное предложение.</span></div></div>
+                  <div class="mod"><span class="mod-n">02</span><div><b>Договорная работа</b><span>Конструирование и экспертиза договоров: риски, ответственность, типовые ловушки.</span></div></div>
+                  <div class="mod"><span class="mod-n">03</span><div><b>Судебное представительство</b><span>От иска до исполнения: процессуальные документы, тактика в заседании, апелляция.</span></div></div>
+                  <div class="mod"><span class="mod-n">04</span><div><b>Споры по категориям</b><span>Трудовые, семейные и имущественные дела: доказательства и линии защиты.</span></div></div>
+                  <div class="mod"><span class="mod-n">05</span><div><b>Привлечение клиентов</b><span>Соцсети, реклама, рекомендации: откуда берутся первые и повторные обращения.</span></div></div>
+                  <div class="mod"><span class="mod-n">06</span><div><b>Экономика юриста</b><span>Ценообразование, рассрочки клиентам, учёт доходов, стажировка на реальных делах.</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FORMAT (bento) ═══════════════ -->
+    <section class="sec-pad" id="format" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="sec-head rv">
+          <span class="eyebrow">Как проходит обучение</span>
+          <h2>Формат, который доводит до результата</h2>
+        </div>
+        <div class="bento">
+          <div class="b-cell b-7 rv">
+            <div class="b-shell"><div class="b-core">
+              <div class="b-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></div>
+              <b>Живые занятия с разбором</b>
+              <p>Еженедельные онлайн-встречи с практикующими юристами. Разбираем документы, ходатайства и судебные акты по настоящим делам — с ответами на вопросы в прямом эфире.</p>
+            </div></div>
+          </div>
+          <div class="b-cell b-5 rv" style="--d:80ms">
+            <div class="b-shell"><div class="b-core">
+              <div class="b-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+              <b>Домашние задания с проверкой</b>
+              <p>После каждого модуля — практическое задание: заявление, договор, позиция по делу. Каждый файл проверяет куратор вручную и даёт развёрнутую обратную связь.</p>
+            </div></div>
+          </div>
+          <div class="b-cell b-5 rv" style="--d:120ms">
+            <div class="b-shell"><div class="b-core">
+              <div class="b-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+              <b>Закрытый чат группы</b>
+              <p>Небольшие группы до 15 человек. В чате — куратор, сокурсники и разбор сложных ситуаций из вашей будущей практики в любое время.</p>
+            </div></div>
+          </div>
+          <div class="b-cell b-7 rv" style="--d:200ms">
+            <div class="b-shell"><div class="b-core">
+              <div class="b-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13L7 22l5-3 5 3-1.5-9"/></svg></div>
+              <b>Сертификат и портфолио</b>
+              <p>По итогам — именной сертификат Qazna Consulting и собранное за курс портфолио документов, с которым можно приходить к первым клиентам.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ STEPS ═══════════════ -->
+    <section class="sec-pad" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="sec-head rv">
+          <span class="eyebrow">Путь студента</span>
+          <h2>От заявки до собственной практики</h2>
+        </div>
+        <div class="steps">
+          <div class="step rv"><span class="step-n">01</span><b>Заявка</b><span>Оставляете обращение через WhatsApp — отвечаем в течение дня.</span></div>
+          <div class="step rv" style="--d:70ms"><span class="step-n">02</span><b>Консультация</b><span>Короткое интервью: цель, опыт, подбор подходящей программы.</span></div>
+          <div class="step rv" style="--d:140ms"><span class="step-n">03</span><b>Зачисление</b><span>Договор и оплата целиком или рассрочка 0% — оформление на месте.</span></div>
+          <div class="step rv" style="--d:210ms"><span class="step-n">04</span><b>Обучение</b><span>3–4 месяца модулей, практики и домашних заданий с проверкой.</span></div>
+          <div class="step rv" style="--d:280ms"><span class="step-n">05</span><b>Выпуск</b><span>Сертификат, портфолио и поддержка после выпуска.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PAYMENT ═══════════════ -->
+    <section class="sec-pad" id="payment" style="border-top: 1px solid var(--line);">
+      <div class="container pay-grid">
+        <div class="rv">
+          <span class="eyebrow">Оплата и рассрочка</span>
+          <h2 class="sec-head-h2" style="font-family: var(--font-d); font-weight: 900; font-size: clamp(30px, 4.4vw, 54px); line-height: 1.05; letter-spacing: -0.03em; margin-top: 22px;">Начните сейчас — платите частями</h2>
+          <p style="margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 48ch;">
+            Мы сами предоставляем рассрочку своим студентам: без банков, кредитов
+            и процентных ставок. Оформление занимает несколько минут.
+          </p>
+          <div class="pay-list">
+            <div class="pay-item">
+              <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <div><b>0% — без переплат</b><span>Сумма рассрочки равна стоимости курса.</span></div>
+            </div>
+            <div class="pay-item">
+              <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><b>Оформление за 10 минут</b><span>Удостоверение личности и подписанный договор — всё, что нужно.</span></div>
+            </div>
+            <div class="pay-item">
+              <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18"/></svg></div>
+              <div><b>Доступ после первого взноса</b><span>Начинаете учиться сразу, остальное — равными платежами.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="price-cards rv" style="--d:120ms">
+          <div class="pc-shell pc-hot">
+            <div class="pc-core">
+              <div class="pc-name"><b>Банкротство и ВПС</b>специализация · 3 месяца</div>
+              <div class="pc-sum"><b>500 000 ₸</b><small>от 130 000 ₸/мес</small></div>
+            </div>
+          </div>
+          <div class="pc-shell">
+            <div class="pc-core">
+              <div class="pc-name"><b>Частная практика</b>полный цикл · 4 месяца</div>
+              <div class="pc-sum"><b>650 000 ₸</b><small>от 160 000 ₸/мес</small></div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-ghost" data-wa="Здравствуйте! Хочу оформить рассрочку на курс. Как это сделать?" style="justify-content:center; width:100%;">
+            Оформить рассрочку
+            <span class="orb"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="sec-pad" id="faq" style="border-top: 1px solid var(--line);">
+      <div class="container faq-grid">
+        <div class="faq-side rv">
+          <span class="eyebrow">Частые вопросы</span>
+          <h2 style="font-family: var(--font-d); font-weight: 900; font-size: clamp(30px, 4.4vw, 54px); line-height: 1.05; letter-spacing: -0.03em; margin-top: 22px; text-wrap: balance;">Остались вопросы?</h2>
+          <p style="margin-top: 18px; color: var(--muted); font-size: 15px; line-height: 1.75;">Не нашли ответ — напишите нам, куратор набора ответит лично и поможет выбрать программу.</p>
+          <a href="#" class="btn btn-accent" data-wa="Здравствуйте! У меня вопрос по курсам.">
+            Задать вопрос
+            <span class="orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.6 8.6 0 01-3.8-.9L3 20l1-4.9a8.4 8.4 0 1117-3.6z"/></svg></span>
+          </a>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item rv">
+            <button class="faq-q" aria-expanded="false">
+              Нужен ли диплом юриста для поступления?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>Для курса «Частная практика» предпочтительно юридическое образование — программа рассчитана на применение знаний. На курс по банкротству берём и без диплома: базу даём с нуля, а практика в этой нише во многом процедурная. На консультации поможем определить, какая программа вам подходит.</p></div></div>
+          </div>
+          <div class="faq-item rv" style="--d:60ms">
+            <button class="faq-q" aria-expanded="false">
+              Как проходят занятия и что если пропустил?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>Занятия проходят онлайн в формате живых встреч — их удобно совмещать с работой. Все записи и материалы остаются в доступе до конца обучения плюс 3 месяца после выпуска, поэтому пропущенную тему можно догнать в удобное время.</p></div></div>
+          </div>
+          <div class="faq-item rv" style="--d:120ms">
+            <button class="faq-q" aria-expanded="false">
+              Рассрочка правда без процентов?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>Да. Рассрочку предоставляет сам учебный центр, без участия банков: вы платите ровно стоимость курса, разбитую на равные платежи — от 130 000 ₸ или от 160 000 ₸ в месяц в зависимости от программы. Первый взнос открывает доступ к обучению.</p></div></div>
+          </div>
+          <div class="faq-item rv" style="--d:180ms">
+            <button class="faq-q" aria-expanded="false">
+              Какой документ я получу?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>После защиты финальной работы вы получаете именной сертификат Qazna Consulting о прохождении курса. Главный результат, однако, — портфолио: комплект документов, которые вы научились составлять, и умение вести клиента самостоятельно.</p></div></div>
+          </div>
+          <div class="faq-item rv" style="--d:240ms">
+            <button class="faq-q" aria-expanded="false">
+              Помогаете ли с первыми клиентами?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>Лучшие выпускники получают предложение о сотрудничестве и стажировке на действующих делах центра. Кроме того, модуль про привлечение клиентов входит в программу: вы уходите с понятным планом, откуда брать первые обращения.</p></div></div>
+          </div>
+          <div class="faq-item rv" style="--d:300ms">
+            <button class="faq-q" aria-expanded="false">
+              Когда стартует ближайшая группа?
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-in"><p>Набор в новую группу открыт сейчас — точную дату старта и расписание уточнит куратор при записи. Мест в группе ограниченное количество, чтобы каждому студенту хватало внимания наставника.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FINAL CTA ═══════════════ -->
+    <section style="padding-top: clamp(20px, 3vw, 40px);">
+      <div class="final rv">
+        <div class="final-in">
+          <span class="eyebrow"><i class="dot"></i>Набор открыт</span>
+          <h2 style="margin-top: 24px;">Сделайте право своей профессией</h2>
+          <p>Напишите нам — расскажем о программах, поможем выбрать направление и оформим рассрочку в тот же день.</p>
+          <a href="#" class="btn btn-accent" data-wa="Здравствуйте! Хочу записаться на курс Qazna Consulting.">
+            Записаться через WhatsApp
+            <span class="orb"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div class="brand" style="gap:8px;"><img src="logo.svg" alt="Логотип Qazna Consulting" style="height:30px;width:auto;border-radius:8px;" /><b>Qazna Consulting</b><span>· Образование</span></div>
+          <p class="foot-desc">Образовательное направление Qazna Consulting: практические курсы юридической специальности для Казахстана.</p>
+        </div>
+        <div class="foot-col">
+          <b>Навигация</b>
+          <a href="#programs">Программы</a>
+          <a href="#format">Формат обучения</a>
+          <a href="#payment">Оплата и рассрочка</a>
+          <a href="#faq">Частые вопросы</a>
+        </div>
+        <div class="foot-col">
+          <b>Связь</b>
+          <a href="#" data-wa="Здравствуйте! У меня вопрос по курсам.">WhatsApp — быстрый ответ</a>
+          <a href="mailto:support@qaznaconsulting.kz">support@qaznaconsulting.kz</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Qazna Consulting · Образовательное направление. Все права защищены.</span>
+        <button type="button" id="privacy-open">Политика конфиденциальности</button>
+      </div>
+      <p style="margin-top: 16px; font-size: 11px; color: var(--faint); line-height: 1.6; max-width: 70ch;">
+        Информация на сайте носит справочный характер и не является публичной офертой. Обучение не гарантирует трудоустройство или конкретный профессиональный результат.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ PRIVACY MODAL ═══════════════ -->
+  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-card">
+      <button class="modal-x" data-close aria-label="Закрыть">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 id="pm-title">Политика конфиденциальности</h3>
+      <p>Оператор персональных данных — Qazna Consulting, Республика Казахстан. Настоящая политика действует на сайте курсов образования.</p>
+      <h4>Какие данные мы собираем</h4>
+      <ul>
+        <li>Имя и номер телефона, которые вы сообщаете при обращении через WhatsApp или электронную почту;</li>
+        <li>Технические данные визита: источник перехода (UTM-метки), страница обращения, время визита.</li>
+      </ul>
+      <h4>Цели обработки</h4>
+      <ul>
+        <li>Ответ на ваше обращение и консультирование по программам обучения;</li>
+        <li>Зачисление на курс, оформление договора и рассрочки;</li>
+        <li>Улучшение рекламных кампаний на основе обезличенной статистики источников.</li>
+      </ul>
+      <h4>Рассылка в мессенджерах</h4>
+      <p>Оставляя обращение, вы соглашаетесь на получение сообщений по вашему запросу через WhatsApp. Мы отправляем сообщения только по теме вашего вопроса и курса. Отказаться от дальнейших сообщений можно в любой момент: отправьте слово «Отписаться» в чат или напишите на <a href="mailto:support@qaznaconsulting.kz" style="color: var(--accent-2);">support@qaznaconsulting.kz</a> с темой «Отказ от рассылки».</p>
+      <h4>Хранение и передача данных</h4>
+      <p>Данные не передаются третьим лицам, кроме случаев, предусмотренных законодательством Республики Казахстан. Срок хранения — до отзыва согласия или достижения цели обработки.</p>
+      <h4>Ваши права</h4>
+      <p>Вы вправе запросить сведения об обработке ваших данных, потребовать их изменения или удаления, направив письмо на указанный адрес электронной почты.</p>
+      <p style="margin-top: 20px; font-size: 12px; color: var(--faint);">Последнее обновление: 2026 г.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ─── НАСТРОЙКИ ──────────────────────────────────────────────────────
+      // Номер WhatsApp (в международном формате, только цифры)
+      var WA_NUMBER = '77082770178';
+      // ────────────────────────────────────────────────────────────────────
+
+      /* ── UTM capture ─────────────────────────────────────────────────── */
+      function captureUtm() {
+        try {
+          var p = new URLSearchParams(location.search);
+          var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+          var found = {};
+          keys.forEach(function (k) { if (p.get(k)) found[k] = p.get(k); });
+          if (!Object.keys(found).length) return {};
+          found._ts = Date.now();
+          localStorage.setItem('qazna_edu_utm', JSON.stringify(found));
+          return found;
+        } catch (e) { return {}; }
+      }
+      var utmData = Object.assign(captureUtm(), (function () {
+        try { return JSON.parse(localStorage.getItem('qazna_edu_utm') || '{}'); }
+        catch (e) { return {}; }
+      })());
+
+      function utmSuffix() {
+        var s = utmData.utm_source || '', c = utmData.utm_campaign || '';
+        if (!s && !c) return '';
+        return '\nМетка: ' + s + (c ? '/' + c : '');
+      }
+
+      /* ── WhatsApp links ──────────────────────────────────────────────── */
+      document.querySelectorAll('[data-wa]').forEach(function (a) {
+        var txt = a.getAttribute('data-wa') + utmSuffix();
+        a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt);
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      });
+
+      /* ── Scroll reveals ──────────────────────────────────────────────── */
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+      /* ── Nav scrolled state ──────────────────────────────────────────── */
+      var nav = document.getElementById('nav');
+      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 24); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ── FAQ accordion ───────────────────────────────────────────────── */
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        item.querySelector('.faq-q').addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(function (o) {
+            o.classList.remove('open');
+            o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            item.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* ── Marquee duplication (seamless loop) ─────────────────────────── */
+      var track = document.getElementById('mq-track');
+      track.innerHTML += track.innerHTML;
+
+      /* ── Privacy modal ───────────────────────────────────────────────── */
+      var modal = document.getElementById('privacy-modal');
+      function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+      document.getElementById('privacy-open').addEventListener('click', openModal);
+      modal.querySelectorAll('[data-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      /* ── Schema.org: Courses ─────────────────────────────────────────── */
+      var ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Course', 'name': 'Банкротство и ВПС — юрист-практик',
+            'description': 'Практический курс по восстановлению платёжеспособности и банкротству физических лиц по Закону РК № 178-VII.',
+            'provider': { '@type': 'Organization', 'name': 'Qazna Consulting' },
+            'offers': {
+              '@type': 'Offer', 'price': '500000', 'priceCurrency': 'KZT',
+              'availability': 'https://schema.org/InStock'
+            }
+          },
+          {
+            '@type': 'Course', 'name': 'Частная юридическая практика',
+            'description': 'Полный цикл запуска собственной юридической практики: ниша, договоры, суды, привлечение клиентов.',
+            'provider': { '@type': 'Organization', 'name': 'Qazna Consulting' },
+            'offers': {
+              '@type': 'Offer', 'price': '650000', 'priceCurrency': 'KZT',
+              'availability': 'https://schema.org/InStock'
+            }
+          }
+        ]
+      });
+      document.head.appendChild(ld);
+    })();
+  </script>
+</body>
+</html>
